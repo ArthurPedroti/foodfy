@@ -23,3 +23,28 @@
     <img alt="Fale comigo no whatsapp - Arthur Pedroti" src="https://img.shields.io/badge/Whatsapp--%23F8952D?style=social&logo=whatsapp">
   </a>
 </p>
+
+<p align="center">
+  <a href="#rocket-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#calendar-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Licença</a>
+</p>
+
+
+## :books: Libraries
+
+- **Variáveis**;
+- **Condicionais**;
+- **Operadores**.
+
+## :books: Libraries
+
+- **Only Pure Languages :wink:**;
+
+## :memo: Licença
+
+This project is under MIT. See at here [LICENSE](/LICENSE) for more informations.
+
+---
+
+Made by :purple_heart: by [Arthur Pedroti](https://github.com/ArthurPedroti)
