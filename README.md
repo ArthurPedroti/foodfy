@@ -25,26 +25,26 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#calendar-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#computer-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#books-libraries">Libraries</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
 </p>
 
 
+## :computer: Technologies
+
+- **HTML**;
+- **CSS**;
+- **Javascript**.
+
 ## :books: Libraries
 
-- **Variáveis**;
-- **Condicionais**;
-- **Operadores**.
+- **Only Pure Languages :wink:**
 
-## :books: Libraries
-
-- **Only Pure Languages :wink:**;
-
-## :memo: Licença
+## :memo: License
 
 This project is under MIT. See at here [LICENSE](/LICENSE) for more informations.
 
 ---
 
-Made by :purple_heart: by [Arthur Pedroti](https://github.com/ArthurPedroti)
+Made by :blue_heart: by [Arthur Pedroti](https://github.com/ArthurPedroti)
