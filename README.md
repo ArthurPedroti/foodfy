@@ -11,14 +11,16 @@
   <a href="https://github.com/ArthurPedroti" target="_blank">
     <img alt="Made by Arthur Pedroti" src="https://img.shields.io/badge/made%20by-Arthur_Pedroti-informational">
   </a>
-
   <a href="https://github.com/ArthurPedroti" target="_blank" >
     <img alt="Github - Arthur Pedroti" src="https://img.shields.io/badge/Github--%23F8952D?style=social&logo=github">
   </a>
-    <a href="https://github.com/ArthurPedroti" target="_blank" >
+  <a href="https://www.linkedin.com/in/arthurpedroti/" target="_blank" >
     <img alt="Linkedin - Arthur Pedroti" src="https://img.shields.io/badge/Linkedin--%23F8952D?style=social&logo=linkedin">
   </a>
-      <a href="https://api.whatsapp.com/send?phone=5519991830454"
+  <a href="mailto:arthurpedroti@gmail.com" target="_blank" >
+    <img alt="Email - Arthur Pedroti" src="https://img.shields.io/badge/Email--%23F8952D?style=social&logo=gmail">
+  </a>
+  <a href="https://api.whatsapp.com/send?phone=5519991830454"
         target="_blank" >
     <img alt="Fale comigo no whatsapp - Arthur Pedroti" src="https://img.shields.io/badge/Whatsapp--%23F8952D?style=social&logo=whatsapp">
   </a>
