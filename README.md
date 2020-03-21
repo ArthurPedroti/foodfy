@@ -35,9 +35,9 @@
 
 ## :computer: Technologies
 
-- **HTML**
-- **CSS**
-- **Javascript**
+- **#HTML**
+- **#CSS**
+- **#Javascript**
 
 ## :books: Libraries
 
