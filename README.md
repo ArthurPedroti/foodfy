@@ -40,26 +40,23 @@
 </p>
 
 <p align="center">
-  <a href="#computer-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#books-libraries">Libraries</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer-languages">Languages</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#books-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
 
-## :computer: Technologies
+## :computer: Languages
 
 - **#HTML**
 - **#CSS**
 - **#Javascript**
 
-## :books: Libraries
-
-<h3>dependencies</h3>
+## :books: Technologies
 
 * **express**: ^4.17.1
 * **nunjucks**: ^3.2.1
 
-devDependencies
-
+**devDependencies**
 * **nodemon**: ^2.0.2
 
 ## :memo: License
