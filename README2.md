@@ -46,25 +46,19 @@
 </p>
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#computer-technologies)
-
-## ➤ :computer: Technologies
+## :computer: Technologies
 
 - **#HTML**
 - **#CSS**
 - **#Javascript**
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#books-libraries)
-
-## ➤ :books: Libraries
+## :books: Libraries
 
 - **Only Pure Languages :wink:**
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#memo-license)
 
-## ➤ :memo: License
+## :memo: License
 
 This project is under MIT. See at here [LICENSE](/LICENSE) for more informations.
 

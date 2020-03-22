@@ -22,6 +22,7 @@
     "nunjucks": "^3.2.1"
   },
   "devDependencies": {
+    "@appnest/readme": "^1.2.5",
     "nodemon": "^2.0.2"
   }
 }
