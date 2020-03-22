@@ -53,7 +53,7 @@
 
 ## :books: Libraries
 
-dependencies
+<h3>dependencies</h3>
 
 * **express**: ^4.17.1
 * **nunjucks**: ^3.2.1
