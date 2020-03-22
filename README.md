@@ -48,13 +48,13 @@
 
 ## :rocket: Environment
 
-- **#https://atp-foodfy.herokuapp.com/**
+- **https://atp-foodfy.herokuapp.com/**
 
 ## :computer: Languages
 
-- **#HTML**
-- **#CSS**
-- **#Javascript**
+- **HTML**
+- **CSS**
+- **Javascript**
 
 ## :books: Technologies
 
