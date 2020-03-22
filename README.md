@@ -1,73 +1,39 @@
-<h1 align="center">
-    <img alt="Foodfy" src="./assets/readme-logo.PNG"  width="400px" style="border-radius:16px;"/>
-</h1>
+{{ template:logo }}
 
-<h3 align="center" >
-  A simple and beautiful recipes website
-</h3>
-
+<h1 align="center">foodfy</h1>
+{{ template:badges }}
 <p align="center">
-  <img alt="Languagues" src="https://img.shields.io/github/languages/count/ArthurPedroti/foodfy">
-  <img alt="Top Languague" src="https://img.shields.io/github/languages/top/ArthurPedroti/foodfy">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/ArthurPedroti/foodfy">
-  <a href="https://github.com/ArthurPedroti/foodfy/commits/master">
-    <img alt="Last commit date" src="https://img.shields.io/github/last-commit/ArthurPedroti/foodfy">
-  </a>
-   <a href="https://github.com/ArthurPedroti/foodfy/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/ArthurPedroti/foodfy">
-  </a>
-  <img alt="License" src="https://img.shields.io/github/license/ArthurPedroti/foodfy">
-</p>
-<p align="center">
-
-  <a href="https://github.com/ArthurPedroti" target="_blank">
-    <img alt="Made by Arthur Pedroti" src="https://img.shields.io/badge/made%20by-Arthur_Pedroti-informational">
-  </a>
-  <a href="https://github.com/ArthurPedroti" target="_blank" >
-    <img alt="Github - Arthur Pedroti" src="https://img.shields.io/badge/Github--%23F8952D?style=social&logo=github">
-  </a>
-  <a href="https://www.linkedin.com/in/arthurpedroti/" target="_blank" >
-    <img alt="Linkedin - Arthur Pedroti" src="https://img.shields.io/badge/Linkedin--%23F8952D?style=social&logo=linkedin">
-  </a>
-  <a href="mailto:arthurpedroti@gmail.com" target="_blank" >
-    <img alt="Email - Arthur Pedroti" src="https://img.shields.io/badge/Email--%23F8952D?style=social&logo=gmail">
-  </a>
-  <a href="https://api.whatsapp.com/send?phone=5519991830454"
-        target="_blank" >
-    <img alt="Fale comigo no whatsapp - Arthur Pedroti" src="https://img.shields.io/badge/Whatsapp--%23F8952D?style=social&logo=whatsapp">
-  </a>
-
+  <b><h1 align="center">
+     <img alt="Foodfy" src="./assets/readme-logo.PNG"  width="400px" style="border-radius:16px;"/>
+ </h1></b></br>
+  <sub><sub>
 </p>
 
-<p align="center">
-  <a href="#computer-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#books-libraries">Libraries</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-license">License</a>
-</p>
+<br />
 
+bullets
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#computer-technologies)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
-## ➤ :computer: Technologies
+## ➤ Table of Contents
 
-- **#HTML**
-- **#CSS**
-- **#Javascript**
+- [➤ Table of Contents](#%e2%9e%a4-table-of-contents)
+- [➤ License](#%e2%9e%a4-license)
+  {{ load:readme/1-installation.md }}
+  {{ load:readme/2-getting-started.md }}
+  {{ load:readme/3-templates.md }}
+  {{ load:readme/4-load-markdown.md }}
+  {{ load:readme/5-automatic-documentation.md }}
+  {{ load:readme/6-this-readme.md }}
+  {{ load:readme/7-custom-templates.md }}
+  {{ load:readme/8-advanced.md }}
+  {{ load:readme/9-featured-readmes.md }}
+  {{ load:readme/10-future-work.md }}
+  {{ load:readme/11-faq.md }}
+  {{ template:contributors }}
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#books-libraries)
+## ➤ License
 
-## ➤ :books: Libraries
-
-- **Only Pure Languages :wink:**
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#memo-license)
-
-## ➤ :memo: License
-
-This project is under MIT. See at here [LICENSE](/LICENSE) for more informations.
-
----
-
-Made by :blue_heart: by [Arthur Pedroti](https://github.com/ArthurPedroti)
+Licensed under [MIT](https://opensource.org/licenses/MIT).
