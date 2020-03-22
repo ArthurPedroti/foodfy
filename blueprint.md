@@ -1,12 +1,10 @@
 Generate Dependencies
 
-## :books: Libraries
-
-# dependencies
+dependencies
 
 {{ pkg.dependencies }}
 
-# devDependencies
+devDependencies
 
 {{ pkg.devDependencies }}
 
