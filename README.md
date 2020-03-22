@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Foodfy" src="./assets/readme-logo.PNG"  width="400px" style="border-radius:16px;"/>
+    <img alt="Foodfy" src="./public/assets/readme-logo.PNG"  width="400px" style="border-radius:16px;"/>
 </h1>
 
 <h3 align="center" >
@@ -46,26 +46,26 @@
 </p>
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#computer-technologies)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#technologies)
 
-## ➤ :computer: Technologies
+## ➤ Technologies
 
 - **#HTML**
 - **#CSS**
 - **#Javascript**
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#books-libraries)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#libraries)
 
-## ➤ :books: Libraries
+## ➤ Libraries
 
 * **express**: ^4.17.1
 * **nunjucks**: ^3.2.1
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#memo-license)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
-## ➤ :memo: License
+## ➤ License
 
 This project is under MIT. See at here [LICENSE](/LICENSE) for more informations.
 
