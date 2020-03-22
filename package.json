@@ -4,7 +4,8 @@
   "description": "<h1 align=\"center\">\r     <img alt=\"Foodfy\" src=\"./assets/readme-logo.PNG\"  width=\"400px\" style=\"border-radius:16px;\"/>\r </h1>",
   "main": "data.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
