@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const nunjucks = require("nunjucks");
 
@@ -14,19 +15,19 @@ nunjucks.configure("views", {
   noCache: true
 });
 
-server.get("/", function(req, res) {
+server.get("/", function (req, res) {
   return res.render("index", { items: recipes });
 });
 
-server.get("/about", function(req, res) {
+server.get("/about", function (req, res) {
   return res.render("about");
 });
 
-server.get("/recipes", function(req, res) {
+server.get("/recipes", function (req, res) {
   return res.render("recipes", { items: recipes });
 });
 
-server.get("/recipes/:index", function(req, res) {
+server.get("/recipes/:index", function (req, res) {
   const recipeIndex = req.params.index;
   if (recipes[recipeIndex] === undefined) {
     return res.send("Receita não encontrada!");
@@ -35,6 +36,6 @@ server.get("/recipes/:index", function(req, res) {
   }
 });
 
-server.listen(5000, function() {
+server.listen(process.env.PORT || 5000, function () {
   console.log("server is running");
 });
