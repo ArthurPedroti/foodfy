@@ -1,10 +1,12 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const nunjucks = require("nunjucks");
 
 const server = express();
 const recipes = require("./data");
 
+server.use(cors());
 server.use(express.static("public"));
 
 server.set("view engine", "njk");
