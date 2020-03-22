@@ -45,7 +45,6 @@
   <a href="#memo-license">License</a>
 </p>
 
-
 ## :computer: Technologies
 
 - **#HTML**
@@ -55,8 +54,6 @@
 ## :books: Libraries
 
 - **Only Pure Languages :wink:**
-
-
 
 ## :memo: License
 
