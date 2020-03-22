@@ -7,6 +7,18 @@
 </h3>
 
 <p align="center">
+  <img alt="Languagues" src="https://img.shields.io/github/languages/count/ArthurPedroti/foodfy">
+  <img alt="Top Languague" src="https://img.shields.io/github/languages/top/ArthurPedroti/foodfy">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/ArthurPedroti/foodfy">
+  <a href="https://github.com/ArthurPedroti/foodfy/commits/master">
+    <img alt="Last commit date" src="https://img.shields.io/github/last-commit/ArthurPedroti/foodfy">
+  </a>
+   <a href="https://github.com/ArthurPedroti/foodfy/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/ArthurPedroti/foodfy">
+  </a>
+  <img alt="License" src="https://img.shields.io/github/license/ArthurPedroti/foodfy">
+</p>
+<p align="center">
 
   <a href="https://github.com/ArthurPedroti" target="_blank">
     <img alt="Made by Arthur Pedroti" src="https://img.shields.io/badge/made%20by-Arthur_Pedroti-informational">
@@ -24,6 +36,7 @@
         target="_blank" >
     <img alt="Fale comigo no whatsapp - Arthur Pedroti" src="https://img.shields.io/badge/Whatsapp--%23F8952D?style=social&logo=whatsapp">
   </a>
+
 </p>
 
 <p align="center">
@@ -42,6 +55,8 @@
 ## :books: Libraries
 
 - **Only Pure Languages :wink:**
+
+
 
 ## :memo: License
 
