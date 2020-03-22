@@ -99,6 +99,8 @@ header {
 
 .card__image-container img {
   width: 100%;
+  height: 140px;
+  object-fit: cover;
   border-radius: 15px;
   margin-bottom: 20px;
 }
@@ -207,4 +209,64 @@ footer {
   margin-top: 60px;
   cursor: pointer;
   text-align: center;
+}
+
+/* === RECIPE PAGE === */
+
+.recipe-wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.recipe__image img {
+  width: 100%;
+  height: 280px;
+  border-radius: 15px;
+}
+
+.recipe__title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #111111;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.recipe__author {
+  font-size: 20px;
+  color: #777777;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.recipe__subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.recipe__expansion {
+  font-size: 12px;
+  font-weight: bold;
+  color: #999999;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.recipe__description {
+  font-size: 18px;
+  color: #444444;
+  line-height: 28px;
+  margin-top: 20px;
+  opacity: 0;
+  display: none;
+}
+
+.recipe__description.active {
+  opacity: 1;
+  display: block;
+}
+
+.recipe__description li {
+  list-style-position: inside;
 }

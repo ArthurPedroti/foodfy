@@ -1,0 +1,33 @@
+{% extends "layout.njk" %}
+{% block head %}
+  <title>Receitas - Foodfy</title>
+{% endblock %}
+{% block header %}
+  <a href="/"><img src="/assets/logo.png" alt="Foodfy"/></a>
+  <a class="link" href="/about">Sobre</a>
+  <a class="link active" href="/recipes">Receitas</a>
+{% endblock %}
+{% block content %}
+
+  <section class="mais-acessadas">
+    <p class="cards__section-title">Mais Acessadas</p>
+    <div class="cards">
+
+      {% for item in items %}
+        <div class="card" id="{{items.indexOf(item)}}">
+          <div class="card__image-container">
+            <img src="{{item.image}}" alt="{{item.title}}"/>
+          </div>
+          <div class="card__content">
+            <p class="card__title">{{item.title}}</p>
+            <p class="card__subtitle">por
+              {{item.author}}</p>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+
+  </section>
+
+{% endblock %}
