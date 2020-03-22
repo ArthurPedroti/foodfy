@@ -53,7 +53,7 @@
 
 ## :books: Libraries
 
-- **Only Pure Languages :wink:**
+{{ pkg.dependencies }}
 
 ## :memo: License
 

@@ -45,6 +45,7 @@
   <a href="#memo-license">License</a>
 </p>
 
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#computer-technologies)
 
 ## ➤ :computer: Technologies
@@ -53,11 +54,14 @@
 - **#CSS**
 - **#Javascript**
 
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#books-libraries)
 
 ## ➤ :books: Libraries
 
-- **Only Pure Languages :wink:**
+* **express**: ^4.17.1
+* **nunjucks**: ^3.2.1
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#memo-license)
 
