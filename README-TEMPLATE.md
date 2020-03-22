@@ -40,8 +40,8 @@
 </p>
 
 <p align="center">
-  <a href="#computer-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#books-libraries">Libraries</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer-languages">Languages</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#books-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
 
@@ -53,6 +53,9 @@
 
 ## :books: Libraries
 
+- **Only Pure Languages :wink:**
+
+**devDependencies**
 - **Only Pure Languages :wink:**
 
 ## :memo: License
