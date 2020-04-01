@@ -60,7 +60,7 @@
 
 - **Only Pure Languages :wink:**
 
-**devDependencies**
+### devDependencies
 
 - **Only Pure Languages :wink:**
 

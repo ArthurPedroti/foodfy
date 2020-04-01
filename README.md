@@ -58,11 +58,18 @@
 
 ## :books: Technologies
 
-* **express**: ^4.17.1
-* **nunjucks**: ^3.2.1
+- **cors**: ^2.8.5
+- **dotenv**: ^8.2.0
+- **express**: ^4.17.1
+- **fs**: 0.0.1-security
+- **method-override**: ^3.0.0
+- **nunjucks**: ^3.2.1
 
-**devDependencies**
-* **nodemon**: ^2.0.2
+### devDependencies
+
+- **browser-sync**: ^2.26.7
+- **nodemon**: ^2.0.2
+- **npm-run-all**: ^4.1.5
 
 ## :memo: License
 
