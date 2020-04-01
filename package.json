@@ -4,7 +4,7 @@
   "description": "<h1 align=\"center\">\r     <img alt=\"Foodfy\" src=\"./assets/readme-logo.PNG\"  width=\"400px\" style=\"border-radius:16px;\"/>\r </h1>",
   "main": "data.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node src/server.js",
     "dev": "npm-run-all -p nodemon browsersync",
     "nodemon": "nodemon src/server.js",
     "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, views'"
