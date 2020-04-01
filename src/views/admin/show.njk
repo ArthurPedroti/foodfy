@@ -1,0 +1,110 @@
+{% extends "admin/layout.njk" %}
+{% block head %}
+  <title>Receitas - Foodfy</title>
+{% endblock %}
+{% block content %}
+
+  <section class="mais-acessadas">
+
+    <form method="POST" action="/admin/recipes?_method=PUT">
+
+      <div class="form-header">
+        <h3>Receita:
+          {{recipe.title}}</h3>
+        <div class="actions">
+          <a class="button" href="/admin/recipes/{{ recipe.id }}/edit">
+            Editar receita
+          </a>
+        </div>
+      </div>
+
+      <div class="recipe-wrapper">
+        <div class="recipe__image">
+          <img src="{{recipe.image}}" alt="{{recipe.title}}">
+        </div>
+        <div class="recipe__content">
+          <p class="recipe__title">{{recipe.title}}</p>
+          <p class="recipe__author">por
+            {{recipe.author}}</p>
+          <br>
+          <div class="recipe__section">
+            <p class="recipe__subtitle">Ingredientes</p>
+            <div class="recipe__description active">
+              <ul>
+                {% for recipe in recipe.ingredients %}
+                  <p>-
+                    {{recipe}}</p>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="recipe__section">
+            <p class="recipe__subtitle">Modo de preparo</p>
+            <div class="recipe__description active">
+              <ol>
+                {% for recipe in recipe.preparations %}
+                  <p>-
+                    {{recipe}}</p>
+                {% endfor %}
+              </ol>
+            </div>
+          </div>
+          <div class="recipe__section">
+            <p class="recipe__subtitle">Informações adicionais</p>
+            <div class="recipe__description active">
+              <p style="white-space: pre-line">{{recipe.information}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+  <script>
+    function addIngredient() {
+      const ingredients = document.querySelector("#ingredients");
+      const fieldContainer = document.querySelectorAll(".ingredient");
+
+      // Realiza um clone do último ingrediente adicionado
+      const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+      // Não adiciona um novo input se o último tem um valor vazio
+      if (newField.children[0].value == "") 
+        return false;
+      
+      // Deixa o valor do input vazio
+      newField
+        .children[0]
+        .value = "";
+      ingredients.appendChild(newField);
+    }
+
+    function addPreparation() {
+      const preparations = document.querySelector("#preparations");
+      const fieldContainer = document.querySelectorAll(".preparation");
+
+      // Realiza um clone do último ingrediente adicionado
+      const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+      // Não adiciona um novo input se o último tem um valor vazio
+      if (newField.children[0].value == "") 
+        return false;
+      
+      // Deixa o valor do input vazio
+      newField
+        .children[0]
+        .value = "";
+      preparations.appendChild(newField);
+    }
+
+    document
+      .querySelector(".add-ingredient")
+      .addEventListener("click", addIngredient);
+
+    document
+      .querySelector(".add-preparation")
+      .addEventListener("click", addPreparation);
+  </script>
+
+{% endblock %}

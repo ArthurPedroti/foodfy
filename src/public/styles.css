@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
 
+:root {
+  --primary-color: #6558c3;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -269,4 +273,138 @@ footer {
 
 .recipe__description li {
   list-style-position: inside;
+}
+
+/* === ADMINISTRATION == */
+
+header.admin {
+  background-color: #111111;
+  max-width: 100%;
+  padding: 27px 0;
+}
+
+.admin-header {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+/* === create === */
+
+.form-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: end;
+  margin: 50px 0 26px 0;
+}
+
+.form-header h3 {
+  font-size: 24px;
+  justify-self: start;
+}
+
+.form-header .actions {
+  display: flex;
+}
+
+.form-header button,
+a.button {
+  background-color: var(--primary-color);
+  padding: 9px 20px;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+a.button {
+  text-decoration: none;
+}
+
+.item p {
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.item input,
+.item textarea {
+  width: 100%;
+  outline: none;
+  margin-top: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+p.add-ingredient,
+p.add-preparation {
+  margin-top: 15px;
+  color: var(--primary-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.item textarea {
+  min-height: 257px;
+  resize: vertical;
+}
+
+button.delete {
+  background-color: #dc4747;
+  margin-right: 10px;
+}
+
+.cards-admin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 20px;
+}
+
+.card-admin {
+  display: grid;
+  grid-template-columns: 172px 1fr;
+  gap: 20px;
+}
+
+.card-admin .card__image-container-admin img {
+  width: 172px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.card-admin .card__content .button a {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--primary-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card-admin .card__content p.button {
+  margin-top: 10px;
+}
+
+.index-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0 20px 0;
+}
+
+.index-header-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.index-header a {
+  background-color: var(--primary-color);
+  padding: 9px 20px;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
 }

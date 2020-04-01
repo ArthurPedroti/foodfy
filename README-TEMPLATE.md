@@ -48,19 +48,20 @@
 
 ## :rocket: Environment
 
-- **#https://atp-foodfy.herokuapp.com/**
+- **https://atp-foodfy.herokuapp.com/**
 
-## :computer: Technologies
+## :computer: Languages
 
-- **#HTML**
-- **#CSS**
-- **#Javascript**
+- **HTML**
+- **CSS**
+- **Javascript**
 
-## :books: Libraries
+## :books: Technologies
 
 - **Only Pure Languages :wink:**
 
 **devDependencies**
+
 - **Only Pure Languages :wink:**
 
 ## :memo: License

@@ -1,0 +1,83 @@
+{% extends "admin/layout.njk" %}
+{% block head %}
+  <title>Receitas - Foodfy</title>
+{% endblock %}
+{% block content %}
+
+  <section class="mais-acessadas">
+
+    <div class="form-header">
+      <h3>Editando receita</h3>
+      <div class="actions">
+        <form id="form-delete" method="POST" action="/admin/recipes?_method=DELETE">
+          <input type="hidden" name="id" value="{{recipe.id}}"/>
+          <button class="delete" type="submit">Deletar</button>
+        </form>
+        <form method="POST" action="/admin/recipes?_method=PUT">
+
+          <button type="submit">Salvar receita</button>
+        </div>
+      </div>
+
+      {% include 'admin/fields.njk' %}
+
+      <input type="hidden" name="id" value="{{recipe.id}}"/>
+
+    </form>
+  </section>
+
+  <script>
+    function addIngredient() {
+      const ingredients = document.querySelector("#ingredients");
+      const fieldContainer = document.querySelectorAll(".ingredient");
+
+      // Realiza um clone do último ingrediente adicionado
+      const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+      // Não adiciona um novo input se o último tem um valor vazio
+      if (newField.children[0].value == "") 
+        return false;
+      
+      // Deixa o valor do input vazio
+      newField
+        .children[0]
+        .value = "";
+      ingredients.appendChild(newField);
+    }
+
+    function addPreparation() {
+      const preparations = document.querySelector("#preparations");
+      const fieldContainer = document.querySelectorAll(".preparation");
+
+      // Realiza um clone do último ingrediente adicionado
+      const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+      // Não adiciona um novo input se o último tem um valor vazio
+      if (newField.children[0].value == "") 
+        return false;
+      
+      // Deixa o valor do input vazio
+      newField
+        .children[0]
+        .value = "";
+      preparations.appendChild(newField);
+    }
+
+    document
+      .querySelector(".add-ingredient")
+      .addEventListener("click", addIngredient);
+
+    document
+      .querySelector(".add-preparation")
+      .addEventListener("click", addPreparation);
+
+    const formDelete = document.querySelector("#form-delete")
+    formDelete.addEventListener("submit", function (event) {
+      const confirmation = confirm("Deseja deletar?")
+      if (!confirmation) {
+        event.preventDefault()
+      }
+    })
+  </script>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "admin/layout.njk" %}
+{% block head %}
+  <title>Receitas - Foodfy</title>
+{% endblock %}
+{% block content %}
+
+  <section class="mais-acessadas">
+
+    <form method="POST" action="/admin/recipes">
+
+      <div class="form-header">
+        <h3>Criando receita</h3>
+        <div class="actions">
+          <button type="submit">Salvar receita</button>
+        </div>
+      </div>
+
+      {% include 'admin/fields.njk' %}
+
+    </form>
+  </section>
+
+  <script>
+    function addIngredient() {
+      const ingredients = document.querySelector("#ingredients");
+      const fieldContainer = document.querySelectorAll(".ingredient");
+
+      // Realiza um clone do último ingrediente adicionado
+      const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+      // Não adiciona um novo input se o último tem um valor vazio
+      if (newField.children[0].value == "") 
+        return false;
+      
+      // Deixa o valor do input vazio
+      newField
+        .children[0]
+        .value = "";
+      ingredients.appendChild(newField);
+    }
+
+    function addPreparation() {
+      const preparations = document.querySelector("#preparations");
+      const fieldContainer = document.querySelectorAll(".preparation");
+
+      // Realiza um clone do último ingrediente adicionado
+      const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+      // Não adiciona um novo input se o último tem um valor vazio
+      if (newField.children[0].value == "") 
+        return false;
+      
+      // Deixa o valor do input vazio
+      newField
+        .children[0]
+        .value = "";
+      preparations.appendChild(newField);
+    }
+
+    document
+      .querySelector(".add-ingredient")
+      .addEventListener("click", addIngredient);
+
+    document
+      .querySelector(".add-preparation")
+      .addEventListener("click", addPreparation);
+  </script>
+
+{% endblock %}
