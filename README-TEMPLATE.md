@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Foodfy" src="./public/assets/readme-logo.PNG"  width="400px" style="border-radius:16px;"/>
+    <img alt="Foodfy" src="src/public/assets/readme-logo.PNG"  width="400px" style="border-radius:16px;"/>
 </h1>
 
 <h3 align="center" >
