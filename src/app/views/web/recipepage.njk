@@ -1,12 +1,7 @@
-{% extends "layout.njk" %}
+{% extends "web/layout.njk" %}
 {% block head %}
   <title>{{item.title}}
     - Foodfy</title>
-{% endblock %}
-{% block header %}
-  <a href="/"><img src="/assets/logo.png" alt="Foodfy"/></a>
-  <a class="link" href="/about">Sobre</a>
-  <a class="link active" href="/recipes">Receitas</a>
 {% endblock %}
 {% block content %}
   <div class="recipe-wrapper">
@@ -16,7 +11,7 @@
     <div class="recipe__content">
       <p class="recipe__title">{{item.title}}</p>
       <p class="recipe__author">por
-        {{item.author}}</p>
+        {{item.chef_name}}</p>
       <br>
       <div class="recipe__section">
         <p class="recipe__subtitle">Ingredientes<span class="recipe__expansion">MOSTRAR</span></p>

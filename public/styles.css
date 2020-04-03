@@ -22,24 +22,60 @@ header {
   max-width: 940px;
   margin: 0 auto;
   display: grid;
-  padding: 30px 0;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 28px 0;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
 }
 
 .links a img {
-  vertical-align: middle;
   margin-right: 100px;
 }
 
 .links a.link {
   font-size: 16px;
   font-weight: 500;
-  padding: 38px 15px 36px 15px;
   color: #111111;
   text-decoration: none;
 }
 
 .links a.active {
   font-weight: 700;
+}
+
+header form {
+  display: grid;
+  grid-template-columns: 1fr 91px;
+  align-items: center;
+  justify-items: end;
+}
+
+header form input {
+  width: 246px;
+  margin-right: 8px;
+  height: 37px;
+  outline: none;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+header form button {
+  width: 91px;
+  background-color: var(--primary-color);
+  height: 37px;
+  padding: 9px 20px;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .wrapper {
@@ -281,12 +317,29 @@ header.admin {
   background-color: #111111;
   max-width: 100%;
   padding: 27px 0;
+  display: block;
 }
 
-.admin-header {
+header.admin .admin-header {
   width: 100%;
   max-width: 940px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: center;
+}
+
+.admin-header .links-admin .link {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: #999999;
+  text-transform: uppercase;
+  margin-left: 30px;
+}
+
+.admin-header .links-admin .link.active {
+  color: #ffffff;
 }
 
 /* === create === */
@@ -357,6 +410,7 @@ button.delete {
 }
 
 .cards-admin {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px 20px;
@@ -388,8 +442,10 @@ button.delete {
 }
 
 .index-header {
-  display: flex;
-  justify-content: space-between;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   margin: 50px 0 20px 0;
 }
 
@@ -398,7 +454,15 @@ button.delete {
   font-weight: bold;
 }
 
-.index-header a {
+.index-header .actions {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  align-items: center;
+  justify-self: end;
+}
+
+.index-header a,
+.index-header form button {
   background-color: var(--primary-color);
   padding: 9px 20px;
   color: white;
@@ -407,4 +471,124 @@ button.delete {
   cursor: pointer;
   font-size: 16px;
   text-decoration: none;
+  margin-left: 8px;
+  text-align: center;
+}
+
+.index-header form input {
+  padding: 9px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  margin-right: -6px;
+}
+
+/* pagination */
+
+section.admin {
+  max-width: 940px;
+  margin: 0 auto;
+  display: grid;
+}
+
+section.admin .pagination {
+  margin-top: 20px;
+  align-self: end;
+  justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.pagination a:hover {
+  filter: brightness(0.3);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+select {
+  width: 100%;
+  outline: none;
+  margin-top: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+/* chefs list */
+
+.cards-chefs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px 20px;
+}
+
+.cards-chefs .chef-img img {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+.cards-chefs .card-chef {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  align-items: center;
+}
+
+.chef__title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.chef__title_web {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.recipes {
+  font-size: 14px;
+  color: #666666;
+}
+
+.cards-chefs .card-chef .card__content .button a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.chef-details {
+  display: grid;
+  justify-items: center;
+}
+
+.chef-details img {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+.chef-details h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.chef-details h2 {
+  font-size: 20px;
+  color: #777;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.chef-recipes {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }

@@ -1,0 +1,42 @@
+{% extends "admin/chefs/layout.njk" %}
+{% block head %}
+  <title>Chefs - Foodfy</title>
+{% endblock %}
+{% block content %}
+
+  <section class="admin">
+
+    <div class="index-header">
+      <p class="index-header-title">Gerenciar Chefs</p>
+      <div class="actions">
+        <form action="/admin/chefs" method="GET">
+          <input type="text" name="filter" placeholder="Chef" value="{{ filter }}"/>
+          <button type="submit">Filtrar</button>
+        </form>
+        <a href="/admin/chefs/create">Criar chef</a>
+      </div>
+    </div>
+
+    <div class="cards-chefs">
+
+      {% for chef in chefs %}
+        <div class="card-chef" id="{{chef.id}}">
+          <div class="chef-img">
+            <img src="{{chef.avatar_url}}" alt="{{chef.title}}"/>
+          </div>
+          <div class="card__content">
+            <p class="chef__title">{{chef.name}}</p>
+            <p class="button">
+              <a href="/admin/chefs/{{chef.id}}">Visualizar</a>
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+
+    <div class="pagination" data-page="{{ pagination.page }}" data-total="{{ pagination.total }}" data-filter="{{ filter }}"></div>
+
+  </section>
+
+{% endblock %}

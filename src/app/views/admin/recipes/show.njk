@@ -1,10 +1,10 @@
-{% extends "admin/layout.njk" %}
+{% extends "admin/recipes/layout.njk" %}
 {% block head %}
   <title>Receitas - Foodfy</title>
 {% endblock %}
 {% block content %}
 
-  <section class="mais-acessadas">
+  <section class="admin">
 
     <form method="POST" action="/admin/recipes?_method=PUT">
 
@@ -25,7 +25,7 @@
         <div class="recipe__content">
           <p class="recipe__title">{{recipe.title}}</p>
           <p class="recipe__author">por
-            {{recipe.author}}</p>
+            {{recipe.chef_name}}</p>
           <br>
           <div class="recipe__section">
             <p class="recipe__subtitle">Ingredientes</p>
@@ -42,7 +42,7 @@
             <p class="recipe__subtitle">Modo de preparo</p>
             <div class="recipe__description active">
               <ol>
-                {% for recipe in recipe.preparations %}
+                {% for recipe in recipe.preparation %}
                   <p>-
                     {{recipe}}</p>
                 {% endfor %}

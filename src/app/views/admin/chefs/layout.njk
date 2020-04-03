@@ -9,20 +9,18 @@
     {% endblock %}
   </head>
   <body>
-    <header>
-      <div class="links">
+    <header class="admin">
+      <div class="admin-header">
         {% block header %}
-          <a href="/"><img src="/assets/logo.png" alt="Foodfy"/></a>
-          <a class="link" href="/about">Sobre</a>
-          <a class="link" href="/recipes">Receitas</a>
+          <a href="/admin"><img src="/assets/logo2.png" alt="Foodfy"/></a>
+          <div class="links-admin">
+            <a class="link" href="/admin/recipes">Receitas</a>
+            <a class="link" href="/admin/chefs">Chefs</a>
+          </div>
         {% endblock %}
       </div>
     </header>
     {% block content %}{% endblock %}
-
-    <footer>
-      <p class="footer__title">Todos direitos reservados, receitas Foodfy.</p>
-    </footer>
 
     <script src="/scripts.js"></script>
   </body>

@@ -1,10 +1,10 @@
-{% extends "admin/layout.njk" %}
+{% extends "admin/recipes/layout.njk" %}
 {% block head %}
   <title>Receitas - Foodfy</title>
 {% endblock %}
 {% block content %}
 
-  <section class="mais-acessadas">
+  <section class="admin">
 
     <div class="form-header">
       <h3>Editando receita</h3>
@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      {% include 'admin/fields.njk' %}
+      {% include 'admin/recipes/fields.njk' %}
 
       <input type="hidden" name="id" value="{{recipe.id}}"/>
 

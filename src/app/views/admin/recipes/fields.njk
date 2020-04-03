@@ -1,0 +1,57 @@
+<div class="item">
+  <p>Imagem da receita</p>
+  <input
+    type="url"
+    name="image"
+    placeholder="http://"
+    value="{{ recipe.image }}"
+  />
+</div>
+<div class="item">
+  <p>Chef</p>
+  <select name="chef" placeholder="Seleceione um chef">
+    {% for chef in chefOptions %}
+    <option value="{{chef.id}}" {% if recipe.chef_id == chef.id %}selected{% endif %}>
+    {{chef.name}}
+    </option>
+    {% endfor %}
+  </select>
+</div>
+<div class="item">
+  <p>Título</p>
+  <input type="text" name="title" value="{{ recipe.title }}" />
+</div>
+<div class="item">
+  <p>Ingredientes</p>
+  <div id="ingredients">
+    {% for ingredient in recipe.ingredients %}
+    <div class="ingredient">
+      <input type="text" name="ingredients[]" value="{{ ingredient }}" />
+    </div>
+    {% else %}
+    <div class="ingredient">
+      <input type="text" name="ingredients[]" />
+    </div>
+    {% endfor %}
+  </div>
+  <p class="add-ingredient">Adicionar novo ingrediente</p>
+</div>
+<div class="item">
+  <p>Modo de preparo</p>
+  <div id="preparations">
+    {% for preparation in recipe.preparation %}
+    <div class="preparation">
+      <input type="text" name="preparation[]" value="{{ preparation }}" />
+    </div>
+    {% else %}
+    <div class="preparation">
+      <input type="text" name="preparation[]" />
+    </div>
+    {% endfor %}
+  </div>
+  <p class="add-preparation">Adicionar novo passo</p>
+</div>
+<div class="item">
+  <p>Informações adicionais</p>
+  <textarea name="information">{{ recipe.information }}</textarea>
+</div>
