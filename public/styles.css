@@ -31,13 +31,12 @@ header {
 }
 
 .links {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
   align-items: center;
 }
 
 .links a img {
-  margin-right: 100px;
+  margin-right: 120px;
 }
 
 .links a.link {
@@ -45,6 +44,7 @@ header {
   font-weight: 500;
   color: #111111;
   text-decoration: none;
+  margin-right: 30px;
 }
 
 .links a.active {
