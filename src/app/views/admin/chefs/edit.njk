@@ -1,4 +1,4 @@
-{% extends "admin/chefs/layout.njk" %}
+{% extends "admin/layout.njk" %}
 {% block head %}
   <title>Chefs - Foodfy</title>
 {% endblock %}
@@ -13,7 +13,7 @@
           <input type="hidden" name="id" value="{{chef.id}}"/>
           <button class="delete" type="submit">Deletar</button>
         </form>
-        <form method="POST" action="/admin/chefs?_method=PUT">
+        <form method="POST" action="/admin/chefs?_method=PUT" enctype="multipart/form-data">
 
           <button type="submit">Salvar chef</button>
         </div>

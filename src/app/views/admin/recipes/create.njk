@@ -1,4 +1,4 @@
-{% extends "admin/recipes/layout.njk" %}
+{% extends "admin/layout.njk" %}
 {% block head %}
   <title>Receitas - Foodfy</title>
 {% endblock %}
@@ -6,7 +6,7 @@
 
   <section class="admin">
 
-    <form method="POST" action="/admin/recipes">
+    <form method="POST" action="/admin/recipes" enctype="multipart/form-data">
 
       <div class="form-header">
         <h3>Criando receita</h3>

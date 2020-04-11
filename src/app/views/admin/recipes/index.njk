@@ -1,4 +1,4 @@
-{% extends "admin/recipes/layout.njk" %}
+{% extends "admin/layout.njk" %}
 {% block head %}
   <title>Receitas - Foodfy</title>
 {% endblock %}
@@ -20,14 +20,14 @@
     <div class="cards-admin">
 
       {% for recipe in recipes %}
-        <div class="card-admin" id="{{recipes.indexOf(recipe)}}">
+        <div class="card-admin" id="{{recipe.id}}">
           <div class="card__image-container-admin">
-            <img src="{{recipe.image}}" alt="{{recipe.title}}"/>
+            <img src="{{recipe.src}}" alt="{{recipe.title}}"/>
           </div>
           <div class="card__content">
             <p class="card__title">{{recipe.title}}</p>
             <p class="card__subtitle">por
-              {{recipe.author}}</p>
+              {{recipe.chef_name}}</p>
             <p class="button">
               <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
             </p>

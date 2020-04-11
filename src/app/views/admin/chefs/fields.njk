@@ -3,6 +3,24 @@
   <input name="name" value="{{chef.name}}">
 </div>
 <div class="item">
-  <p>Avatar</p>
-  <input type="url" name="avatar_url" placeholder="http://" value="{{chef.avatar_url}}">
-</div>
+  <p>Avatar (selecione apenas uma foto)</p>
+  <div id="photos-container" class="limit=1">
+    <div id="photos-upload">
+      <input id="photos-input" type="file" name="photos" multiple="multiple" accept="image/*" onchange="PhotosUpload.handleFileInput(event)">
+      <p>
+        <i class="material-icons">add</i>
+      </p>
+    </div>
+    <div id="photos-preview">
+      {% if files %}
+        {% for image in files %}
+          <div class="photo" id="{{image.file_id}}">
+            <img src="{{image.file_path}}" alt="{{image.name}}">
+            <i class="material-icons" onclick="PhotosUpload.removeOldPhoto(event)">close</i>
+          </div>
+        {% endfor %}
+        <input type="hidden" name="removed_files">
+        {%endif%}
+      </div>
+    </div>
+  </div>

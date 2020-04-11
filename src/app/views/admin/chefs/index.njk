@@ -1,4 +1,4 @@
-{% extends "admin/chefs/layout.njk" %}
+{% extends "admin/layout.njk" %}
 {% block head %}
   <title>Chefs - Foodfy</title>
 {% endblock %}
@@ -22,7 +22,7 @@
       {% for chef in chefs %}
         <div class="card-chef" id="{{chef.id}}">
           <div class="chef-img">
-            <img src="{{chef.avatar_url}}" alt="{{chef.title}}"/>
+            <img src="{{chef.file_path}}" alt="{{chef.title}}"/>
           </div>
           <div class="card__content">
             <p class="chef__title">{{chef.name}}</p>
