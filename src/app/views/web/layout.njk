@@ -19,7 +19,7 @@
 
         {% endblock %}
       </div>
-      <form action="/recipes" method="GET">
+      <form action="/recipes/search" method="GET">
         <input type="text" name="filter" placeholder="Nome da receita" value="{{ filter }}"/>
         <button type="submit">Buscar</button>
       </form>

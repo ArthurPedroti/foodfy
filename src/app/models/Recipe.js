@@ -92,7 +92,7 @@ module.exports = {
     }
   },
   paginate(params) {
-    const { filter, limit, offset, callback } = params;
+    const { filter, limit, offset, order_by } = params;
 
     let query = "",
       filterQuery = "",
@@ -121,7 +121,7 @@ module.exports = {
         GROUP BY recipe_id
       ) images ON (recipes.id = images.recipe_id)
       ${filterQuery}
-      LIMIT $1 OFFSET $2
+      ORDER BY ${order_by} LIMIT $1 OFFSET $2
     `;
 
     // query = `

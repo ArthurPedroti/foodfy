@@ -6,17 +6,25 @@ const WebController = require("./app/controllers/WebController");
 const RecipeController = require("./app/controllers/RecipeController");
 const ChefController = require("./app/controllers/ChefController");
 
-//static pages
+//home
 routes.get("/", WebController.index);
+
+// search
+routes.get("/recipes/search", WebController.search);
+
+//static pages
 routes.get("/about", WebController.about);
-routes.get("/recipes", WebController.show);
-routes.get("/recipes/:index", WebController.showOne);
+routes.get("/recipes", WebController.recipes);
+routes.get("/recipes/:index", WebController.recipePage);
 routes.get("/chefs", WebController.chefs);
 
 //administration
 routes.get("/admin", function (req, res) {
   return res.redirect("/admin/recipes");
 });
+
+// search
+routes.get("/admin/recipes/search", RecipeController.index);
 
 routes.get("/admin/recipes", RecipeController.index);
 routes.get("/admin/recipes/create", RecipeController.create);

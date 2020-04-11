@@ -99,6 +99,7 @@ module.exports = {
         SELECT *
         FROM recipes
         WHERE recipes.chef_id = $1
+        ORDER BY created_at
       `,
         [id]
       );
