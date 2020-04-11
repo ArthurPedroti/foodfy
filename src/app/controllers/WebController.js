@@ -95,7 +95,6 @@ module.exports = {
       "public",
       ""
     )}`;
-    console.log(recipe);
 
     return res.render("web/recipepage", { item: recipe });
   },
