@@ -1,7 +1,7 @@
 {
   "name": "foodfy",
   "version": "1.0.0",
-  "description": "<h1 align=\"center\">\r     <img alt=\"Foodfy\" src=\"./assets/readme-logo.PNG\"  width=\"400px\" style=\"border-radius:16px;\"/>\r </h1>",
+  "description": "foodfy",
   "main": "data.js",
   "scripts": {
     "start": "node src/server.js",
