@@ -45,19 +45,18 @@ module.exports = {
       throw new Error(err);
     }
   },
-  findAll(callback) {
-    db.query(
+  findAll() {
+    try {
+      return db.query(
+        `
+        SELECT recipes.*, chefs.name AS chef_name
+        FROM recipes
+        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
       `
-      SELECT recipes.*, chefs.name AS chef_name
-      FROM recipes
-      LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-    `,
-      function (err, results) {
-        if (err) throw `Database Error! ${err}`;
-
-        callback(results.rows);
-      }
-    );
+      );
+    } catch (err) {
+      throw new Error(err);
+    }
   },
   update(data, callback) {
     const query = `
@@ -92,7 +91,6 @@ module.exports = {
       throw new Error(err);
     }
   },
-
   paginate(params) {
     const { filter, limit, offset, callback } = params;
 

@@ -6,7 +6,7 @@
 {% block content %}
   <div class="recipe-wrapper">
     <div class="recipe__image">
-      <img src="{{item.image}}" alt="{{item.title}}">
+      <img src="{{item.src}}" alt="{{item.title}}">
     </div>
     <div class="recipe__content">
       <p class="recipe__title">{{item.title}}</p>
@@ -41,4 +41,30 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const recipe_sections = document.querySelectorAll(".recipe__section");
+    for (let recipe_section of recipe_sections) {
+      const section = recipe_section.querySelector(".recipe__description");
+      recipe_section
+        .querySelector(".recipe__expansion")
+        .addEventListener("click", function () {
+          if (section.classList.contains("active") === true) {
+            section
+              .classList
+              .remove("active");
+            recipe_section
+              .querySelector(".recipe__expansion")
+              .innerHTML = "MOSTRAR";
+          } else {
+            section
+              .classList
+              .add("active");
+            recipe_section
+              .querySelector(".recipe__expansion")
+              .innerHTML = "ESCONDER";
+          }
+        });
+    }
+  </script>
 {% endblock %}

@@ -1,20 +1,41 @@
 const Recipe = require("../models/Recipe");
 const Chef = require("../models/Chef");
+const File = require("../models/File");
 
 module.exports = {
-  index(req, res) {
-    Recipe.findAll(function(recipes) {
-      return res.render("web/index", { items: recipes.slice(0, 6) });
+  async index(req, res) {
+    results = await Recipe.findAll();
+    recipes = results.rows;
+
+    newRecipes = recipes.map(async (recipe) => {
+      let results = await Recipe.files(recipe.id);
+      const file = results.rows[0].file_id;
+      results = await File.find(file);
+      recipe.path = results.rows[0].path;
+      results = await Chef.find(recipe.chef_id);
+      recipe.chef_name = results.rows[0].name;
+      return recipe;
     });
+    await Promise.all(newRecipes);
+
+    newRecipes = results.rows.map((file) => ({
+      ...file,
+      src: `${req.protocol}://${req.headers.host}${file.path.replace(
+        "public",
+        ""
+      )}`,
+    }));
+
+    return res.render("web/index", { items: newRecipes.slice(0, 6) });
   },
   about(req, res) {
     return res.render("web/about");
   },
-  show(req, res) {
+  async show(req, res) {
     let { filter, page, limit } = req.query;
 
     page = page || 1;
-    limit = limit || 6;
+    limit = limit || 2;
     let offset = limit * (page - 1);
 
     const params = {
@@ -22,33 +43,63 @@ module.exports = {
       page,
       limit,
       offset,
-      callback(recipes) {
-        let mathTotal =
-          recipes[0] == undefined ? 0 : Math.ceil(recipes[0].total / limit);
-
-        const pagination = {
-          total: mathTotal,
-          page
-        };
-
-        return res.render("web/recipes", {
-          items: recipes,
-          pagination,
-          filter
-        });
-      }
     };
 
-    Recipe.paginate(params);
-  },
-  showOne(req, res) {
-    Recipe.find(req.params.index, function(recipe) {
-      if (!recipe) return res.send("Receita não encontrada!");
+    let results = await Recipe.paginate(params);
+    let recipes = results.rows;
 
-      return res.render("web/recipepage", { item: recipe });
+    let mathTotal =
+      recipes[0] == undefined ? 0 : Math.ceil(recipes[0].total / limit);
+
+    const pagination = {
+      total: mathTotal,
+      page,
+    };
+
+    newRecipes = recipes.map(async (recipe) => {
+      let results = await Recipe.files(recipe.id);
+      const file = results.rows[0].file_id;
+      results = await File.find(file);
+      recipe.path = results.rows[0].path;
+      results = await Chef.find(recipe.chef_id);
+      recipe.chef_name = results.rows[0].name;
+      return recipe;
+    });
+    await Promise.all(newRecipes);
+
+    newRecipes = results.rows.map((file) => ({
+      ...file,
+      src: `${req.protocol}://${req.headers.host}${file.path.replace(
+        "public",
+        ""
+      )}`,
+    }));
+
+    return res.render("web/recipes", {
+      items: newRecipes,
+      pagination,
+      filter,
     });
   },
-  chefs(req, res) {
+  async showOne(req, res) {
+    results = await Recipe.find(req.params.index);
+    recipe = results.rows[0];
+    results = await Recipe.files(recipe.id);
+    const file = results.rows[0].file_id;
+    results = await File.find(file);
+    recipe.path = results.rows[0].path;
+    results = await Chef.find(recipe.chef_id);
+    recipe.chef_name = results.rows[0].name;
+
+    recipe.src = `${req.protocol}://${req.headers.host}${recipe.path.replace(
+      "public",
+      ""
+    )}`;
+    console.log(recipe);
+
+    return res.render("web/recipepage", { item: recipe });
+  },
+  async chefs(req, res) {
     let { filter, page, limit } = req.query;
 
     page = page || 1;
@@ -60,23 +111,36 @@ module.exports = {
       page,
       limit,
       offset,
-      callback(chefs) {
-        let mathTotal =
-          chefs[0] == undefined ? 0 : Math.ceil(chefs[0].total / limit);
-
-        const pagination = {
-          total: mathTotal,
-          page
-        };
-
-        return res.render("web/chefs", {
-          chefs,
-          pagination,
-          filter
-        });
-      }
     };
 
-    Chef.paginate(params);
-  }
+    results = await Chef.paginate(params);
+    chefs = results.rows;
+
+    let mathTotal =
+      chefs[0] == undefined ? 0 : Math.ceil(chefs[0].total / limit);
+
+    const pagination = {
+      total: mathTotal,
+      page,
+    };
+
+    chefs = chefs.map(async (chef) => {
+      results = await File.find(chef.file_id);
+      file = results.rows[0];
+      file = `${req.protocol}://${req.headers.host}${file.path.replace(
+        "public",
+        ""
+      )}`;
+      chef.file_path = file;
+      return chef;
+    });
+
+    chefs = await Promise.all(chefs);
+
+    return res.render("web/chefs", {
+      chefs,
+      pagination,
+      filter,
+    });
+  },
 };
