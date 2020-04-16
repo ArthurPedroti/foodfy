@@ -1,0 +1,43 @@
+{% extends "admin/layout.njk" %}
+{% block head %}
+  <title>Receitas - Foodfy</title>
+{% endblock %}
+{% block content %}
+
+  <section class="user-create admin">
+    <form method="POST" action="/admin/profile?_method=PUT">
+
+      <div class="form-header">
+        <h3>Bem vindo
+          {{user.name}}</h3>
+        <div class="actions">
+          <button type="submit">Salvar</button>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="item">
+          <p>Nome</p>
+          <div class="input">
+            <input type="text" name="name" placeholder="Digite seu nome completo" value="{{ user.name }}"/>
+          </div>
+        </div>
+        <div class="item">
+          <p>Email</p>
+          <div class="input">
+            <input type="email" name="email" placeholder="Digite seu email" value="{{ user.email }}" onblur="Validate.apply(this, 'isEmail')"/>
+          </div>
+        </div>
+        <div class="item">
+          <p>Senha</p>
+          <div class="input">
+            <input type="password" name="password" placeholder="Digite sua senha"/>
+          </div>
+        </div>
+        <input type="hidden" name="id" value="{{user.id}}">
+
+      </div>
+
+    </form>
+  </section>
+
+{% endblock %}

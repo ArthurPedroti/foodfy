@@ -1,35 +1,26 @@
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/styles.css"/>
+{% extends "layout.njk" %}
 
-    {% block head %}
-      <title>Foodfy</title>
-    {% endblock %}
-  </head>
-  <body>
-    <header>
-      <div class="links">
-        {% block header %}
-          <a href="/"><img src="/assets/logo.png" alt="Foodfy"/></a>
-          <a class="link" href="/about">Sobre</a>
-          <a class="link" href="/recipes">Receitas</a>
-          <a class="link" href="/chefs">Chefs</a>
+{% block header %}
+  <header>
+    <div class="links">
+      <a href="/"><img src="/assets/logo.png" alt="Foodfy"/></a>
+      <a class="link" href="/about">Sobre</a>
+      <a class="link" href="/recipes">Receitas</a>
+      <a class="link" href="/chefs">Chefs</a>
+      <a href="/admin/users/login">
+        <i class="material-icons">account_circle</i>
+      </a>
 
-        {% endblock %}
-      </div>
-      <form action="/recipes/search" method="GET">
-        <input type="text" name="filter" placeholder="Nome da receita" value="{{ filter }}"/>
-        <button type="submit">Buscar</button>
-      </form>
-    </header>
-    {% block content %}{% endblock %}
+    </div>
+    <form action="/recipes/search" method="GET">
+      <input type="text" name="filter" placeholder="Nome da receita" value="{{ filter }}"/>
+      <button type="submit">Buscar</button>
+    </form>
+  </header>
+{% endblock %}
 
-    <footer>
-      <p class="footer__title">Todos direitos reservados, receitas Foodfy.</p>
-    </footer>
-
-    <script src="/scripts.js"></script>
-  </body>
-</html>
+{% block footer %}
+  <footer>
+    <p class="footer__title">Todos direitos reservados, receitas Foodfy.</p>
+  </footer>
+{% endblock %}

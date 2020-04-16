@@ -1,28 +1,23 @@
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/styles.css"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% extends "layout.njk" %}
 
-    {% block head %}
-      <title>Foodfy</title>
-    {% endblock %}
-  </head>
-  <body>
-    <header class="admin">
-      <div class="admin-header">
-        {% block header %}
-          <a href="/admin"><img src="/assets/logo2.png" alt="Foodfy"/></a>
-          <div class="links-admin">
-            <a class="link" href="/admin/recipes">Receitas</a>
-            <a class="link" href="/admin/chefs">Chefs</a>
-          </div>
-        {% endblock %}
+{% block header %}
+  <header class="admin">
+    <div class="admin-header">
+      <a href="/admin"><img src="/assets/logo2.png" alt="Foodfy"/></a>
+      <div class="links-admin">
+        <a class="link" href="/admin/recipes">Receitas</a>
+        <a class="link" href="/admin/chefs">Chefs</a>
+        <a class="link" href="/admin/users">Usuários</a>
       </div>
-    </header>
-    {% block content %}{% endblock %}
-
-    <script src="/scripts.js"></script>
-  </body>
-</html>
+      <div class="user-options">
+        <a class="my-account" href="/admin/profile">
+          <i class="material-icons">account_circle</i>
+          Minha Conta
+        </a>
+        <form id="logout" method="POST" action="/admin/users/logout">
+          <a class="link active" onclick="document.getElementById('logout').submit();">Sair</a>
+        </form>
+      </div>
+    </div>
+  </header>
+{% endblock %}

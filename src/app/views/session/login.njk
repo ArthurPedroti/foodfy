@@ -1,0 +1,31 @@
+{% extends "session/layout.njk" %}
+{% block head %}
+  <title>Receitas - Foodfy</title>
+{% endblock %}
+{% block content %}
+
+  <section class="login">
+    <p class="title">Iniciar Sessão</p>
+    <form method="POST" action="/admin/users/login">
+      <div class="items">
+        <div class="item">
+          <p>Email</p>
+          <div class="input">
+            <input type="email" name="email" placeholder="Digite seu email" value="{{ user.email }}" onblur="Validate.apply(this, 'isEmail')"/>
+          </div>
+        </div>
+        <div class="item">
+          <p>Senha</p>
+          <div class="input">
+            <input type="password" name="password" placeholder="Digite sua senha"/>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <a href="admin/users/forgot-password">Perdeu a senha?</a>
+        <button>Acessar</button>
+      </div>
+    </form>
+  </section>
+
+{% endblock %}

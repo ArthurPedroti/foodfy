@@ -1,0 +1,41 @@
+header.session {
+  display: flex;
+  justify-content: center;
+  margin-top: 7px;
+  margin-bottom: 118px;
+}
+
+.login {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.login .title {
+  font-size: 24px;
+  color: #111111;
+  font-weight: bold;
+  text-align: center;
+}
+
+.login .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 35px;
+}
+
+.login .actions a {
+  font-size: 16px;
+  color: #969696;
+  font-weight: bold;
+}
+
+.login .actions button {
+  background: #6558c3;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 9px 36px;
+  cursor: pointer;
+}

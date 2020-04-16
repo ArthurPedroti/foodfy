@@ -1,0 +1,26 @@
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/styles/index.css"/>
+    <link rel="stylesheet" href="/styles/user.css"/>
+    <link rel="stylesheet" href="/styles/messages.css"/>
+    <link rel="stylesheet" href="/styles/session.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+
+    {% block head %}
+      <title>Foodfy</title>
+    {% endblock %}
+  </head>
+  <body>
+    {%include "parts/messages.njk"%}
+    {% block header %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}{% endblock %}
+
+    <script src="/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "admin/layout.njk" %}
+{% block head %}
+  <title>Chefs - Foodfy</title>
+{% endblock %}
+{% block content %}
+
+  <section class="user-create admin">
+
+    <div class="form-header">
+      <h3>Atualizar Usuário</h3>
+      <div class="actions">
+        <form id="form-delete" method="POST" action="/admin/users?_method=DELETE">
+          <input type="hidden" name="id" value="{{user.id}}"/>
+          <button class="delete" type="submit">Deletar</button>
+        </form>
+        <form method="POST" action="/admin/users?_method=PUT">
+
+          <button type="submit">Salvar</button>
+        </div>
+      </div>
+
+      <div class="fields">
+        {% include 'admin/user/fields.njk' %}
+      </div>
+
+      <input type="hidden" name="id" value="{{user.id}}"/>
+
+    </form>
+  </section>
+
+  <script>
+
+    const formDelete = document.querySelector("#form-delete")
+    formDelete.addEventListener("submit", function (event) {
+      const confirmation = confirm("Deseja deletar?")
+      if (!confirmation) {
+        event.preventDefault()
+      }
+    })
+  </script>
+
+{% endblock %}

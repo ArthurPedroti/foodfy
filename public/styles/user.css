@@ -1,0 +1,83 @@
+.user-create .fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.user-create .fields input.error {
+  border: 1px solid #ff3131;
+}
+
+.user-create .fields input[type="checkbox"] {
+  width: initial;
+}
+
+.user-create .fields .check-text {
+  margin: 0;
+}
+
+.user-create button {
+  width: 140px;
+  margin-left: 16px;
+}
+
+.user-create .cancel {
+  background: #8a8a8a;
+  border-radius: 4px;
+  padding: 10 40;
+  color: white;
+  font-weight: bold;
+  margin-left: 16px;
+}
+
+/* Users List */
+
+.users-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 54 0 72 0;
+}
+
+.users-header a {
+  background: #7159c1;
+  border-radius: 4px;
+  padding: 10 50;
+  color: white;
+  font-weight: bold;
+}
+
+.cards-users {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px 200px;
+}
+
+.cards-users .title {
+  font-size: 18px;
+  color: #111111;
+}
+
+.cards-users .email {
+  font-size: 14px;
+  color: #777777;
+  margin-top: 4px;
+}
+
+.cards-users .card__actions {
+  display: flex;
+  margin-top: 16px;
+}
+
+.cards-users .card__actions .edit {
+  font-size: 14px;
+  color: #6558c3;
+  font-weight: bold;
+}
+
+.cards-users .card__actions .remove {
+  font-size: 14px;
+  color: #f55a5a;
+  margin-left: 16px;
+  font-weight: bold;
+}
