@@ -6,6 +6,7 @@ const Chef = require("../models/Chef");
 module.exports = {
   async index(req, res) {
     let { filter, page, limit } = req.query;
+    let user_id = req.session.userId;
 
     page = page || 1;
     limit = limit || 2;
@@ -21,6 +22,7 @@ module.exports = {
       limit,
       offset,
       order_by,
+      user_id,
     };
 
     let results = await Recipe.paginate(params);

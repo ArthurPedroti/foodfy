@@ -1,5 +1,6 @@
 const db = require("../../config/db");
 const { date } = require("../../lib/utils");
+const User = require("./User");
 
 module.exports = {
   create(data) {
@@ -93,8 +94,18 @@ module.exports = {
       throw new Error(err);
     }
   },
-  paginate(params) {
-    const { filter, limit, offset, order_by } = params;
+  async paginate(params) {
+    const { filter, limit, offset, order_by, user_id: id } = params;
+    console.log(id);
+    let user = await User.findOne({ where: { id } });
+    let adminQuery = ``;
+
+    if (user.is_admin == false) {
+      adminQuery = `
+        AND recipes.user_id = '${id}'
+      `;
+    }
+    console.log(adminQuery);
 
     let query = "",
       filterQuery = "",
@@ -123,6 +134,7 @@ module.exports = {
         GROUP BY recipe_id
       ) images ON (recipes.id = images.recipe_id)
       ${filterQuery}
+      ${adminQuery}
       ORDER BY ${order_by} LIMIT $1 OFFSET $2
     `;
 

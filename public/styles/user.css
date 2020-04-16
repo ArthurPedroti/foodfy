@@ -78,6 +78,7 @@
 .cards-users .card__actions .remove {
   font-size: 14px;
   color: #f55a5a;
+  background-color: initial;
   margin-left: 16px;
   font-weight: bold;
 }

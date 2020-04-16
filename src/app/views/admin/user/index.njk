@@ -25,9 +25,10 @@
             <a class="edit" href="/admin/users/edit/{{user.id}}">
               Editar
             </a>
-            <a class="remove" href="/admin/users/edit/{{user.id}}">
-              Remover
-            </a>
+            <form id="form-delete" method="POST">
+              <input type="hidden" name="id" value="{{user.id}}" action="/admin/users?_method=DELETE"/>
+              <button class="remove" type="submit">Remover</button>
+            </form>
           </div>
         </div>
       {% endfor %}
@@ -35,5 +36,16 @@
     </div>
 
   </section>
+
+  <script>
+
+    const formDelete = document.querySelectorAll("#form-delete")
+    formDelete.addEventListener("submit", function (event) {
+      const confirmation = confirm("Deseja deletar?")
+      if (!confirmation) {
+        event.preventDefault()
+      }
+    })
+  </script>
 
 {% endblock %}
