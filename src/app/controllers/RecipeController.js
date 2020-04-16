@@ -116,7 +116,7 @@ module.exports = {
     let results = await Recipe.create(req.body);
     const recipeId = results.rows[0].id;
     const filesPromise = req.files.map((file) =>
-      File.create(file, null, recipeId)
+      File.create(file, recipeId)
         .then((response) => {
           file_id = response.rows[0].id;
           recipe_id = recipeId;
@@ -140,7 +140,7 @@ module.exports = {
 
     if (req.files.length != 0) {
       const filesPromise = req.files.map((file) =>
-        File.create(file)
+        File.create(file, req.body.id)
           .then((response) => {
             file_id = response.rows[0].id;
             recipe_id = req.body.id;
@@ -173,11 +173,12 @@ module.exports = {
     results = await Recipe.files(req.body.id);
     files = results.rows;
 
-    await File.deleteAllRecipeFiles(req.body.id);
-    await Recipe.delete(req.body.id);
+    const deletePromise = files.map(
+      async (file) => await File.delete(file.file_id)
+    );
+    let resolve = await Promise.all(deletePromise);
 
-    files.map((file) => File.delete(file.file_id));
-    await Promise.all(files);
+    await Recipe.delete(req.body.id);
 
     return res.redirect("/admin/recipes");
   },

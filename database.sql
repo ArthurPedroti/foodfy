@@ -45,11 +45,9 @@ CREATE TABLE "files" (
   "id" SERIAL PRIMARY KEY,
   "name" text NOT NULL,
   "path" text NOT NULL,
-  "chef_id" int,
   "recipe_id" int
 );
 
-ALTER TABLE "files" ADD FOREIGN KEY ("chef_id") REFERENCES "chefs" ("id") ON DELETE CASCADE;
 ALTER TABLE "files" ADD FOREIGN KEY ("recipe_id") REFERENCES "recipes" ("id") ON DELETE CASCADE;
 
 -- connect pg simple table
