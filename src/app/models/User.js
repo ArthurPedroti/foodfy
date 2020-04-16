@@ -100,7 +100,6 @@ module.exports = {
       id,
     ]);
     const recipes = results.rows;
-    console.log(recipes);
 
     //remove user
     await db.query("DELETE FROM users WHERE id = $1", [id]);
@@ -110,6 +109,5 @@ module.exports = {
       File.deleteByRecipe(recipe.id)
     );
     let promiseResults = await Promise.all(allFilesPromise);
-    console.log(promiseResults);
   },
 };

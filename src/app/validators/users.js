@@ -54,7 +54,22 @@ async function put(req, res, next) {
   next();
 }
 
+async function del(req, res, next) {
+  id = req.body.id;
+  user_id = req.session.userId;
+
+  let users = await User.all();
+
+  if (id == user_id)
+    return res.render("admin/user/index", {
+      users,
+      error: "Você não pode deletar sua própria conta!",
+    });
+  next();
+}
+
 module.exports = {
   post,
   put,
+  del,
 };

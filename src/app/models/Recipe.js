@@ -96,7 +96,6 @@ module.exports = {
   },
   async paginate(params) {
     const { filter, limit, offset, order_by, user_id: id } = params;
-    console.log(id);
     let user = await User.findOne({ where: { id } });
     let adminQuery = ``;
 
@@ -105,7 +104,6 @@ module.exports = {
         AND recipes.user_id = '${id}'
       `;
     }
-    console.log(adminQuery);
 
     let query = "",
       filterQuery = "",

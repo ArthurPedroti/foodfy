@@ -47,7 +47,7 @@ module.exports = {
   },
   async delete(req, res) {
     try {
-      User.delete(req.body.id);
+      // User.delete(req.body.id);
       return res.render("admin/user/index", {
         success: "Conta deletada com sucesso",
       });
