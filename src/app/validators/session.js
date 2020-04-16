@@ -44,6 +44,7 @@ async function forgot(req, res, next) {
 
 async function reset(req, res, next) {
   const { email, password, passwordRepeat, token } = req.body;
+
   // search the user
   const user = await User.findOne({ where: { email } });
 
@@ -62,7 +63,6 @@ async function reset(req, res, next) {
       error: "Senhas não conferem",
     });
   }
-  console.log(token);
   //check token
   if (token != user.reset_token) {
     return res.render("session/password-reset", {

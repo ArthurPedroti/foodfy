@@ -1,4 +1,7 @@
 const User = require("../models/User");
+const crypto = require("crypto");
+const mailer = require("../../lib/mailer");
+const { hash } = require("bcryptjs");
 
 module.exports = {
   loginForm(req, res) {
@@ -41,7 +44,7 @@ module.exports = {
         <h2>Perdeu a senha?</h2>
         <p>Não se preucupe, clique no link abaixo para recuperar a sua senha</p>
         <p>
-          <a href="http://localhost:3000/users/password-reset?token=${token}" target="_blank">
+          <a href="http://localhost:3000/admin/users/password-reset?token=${token}" target="_blank">
             RECUPERAR SENHA
           </a>
         </p>
