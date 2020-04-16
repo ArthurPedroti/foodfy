@@ -5,17 +5,19 @@ module.exports = {
   create(data) {
     const query = `
       INSERT INTO recipes (
+        user_id,
         chef_id,
         title,
         ingredients,
         preparation,
         information,
         created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6)
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7)
         RETURNING id
     `;
 
     const values = [
+      data.user_id,
       data.chef,
       data.title,
       data.ingredients,
@@ -30,7 +32,7 @@ module.exports = {
       throw new Error(err);
     }
   },
-  find(id, callback) {
+  find(id) {
     try {
       return db.query(
         `

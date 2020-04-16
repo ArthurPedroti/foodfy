@@ -3,6 +3,8 @@ const { hash } = require("bcryptjs");
 const crypto = require("crypto");
 const mailer = require("../../lib/mailer");
 
+const File = require("../models/File");
+
 const fs = require("fs");
 
 module.exports = {
@@ -93,30 +95,21 @@ module.exports = {
     return;
   },
   async delete(id) {
-    //pick all products
-    let results = await db.query("SELECT * FROM products WHERE user_id = $1", [
+    //pick all recipes
+    let results = await db.query("SELECT * FROM recipes WHERE user_id = $1", [
       id,
     ]);
-    const products = results.rows;
-
-    //pick all images
-    const allFilesPromise = products.map((product) =>
-      Product.files(product.id)
-    );
-    let promiseResults = await Promise.all(allFilesPromise);
+    const recipes = results.rows;
+    console.log(recipes);
 
     //remove user
     await db.query("DELETE FROM users WHERE id = $1", [id]);
 
-    //remove images form public
-    promiseResults.map((results) => {
-      results.rows.map((file) => {
-        try {
-          fs.unlinkSync(file.path);
-        } catch (err) {
-          console.error(err);
-        }
-      });
-    });
+    //remove all images
+    const allFilesPromise = recipes.map((recipe) =>
+      File.deleteByRecipe(recipe.id)
+    );
+    let promiseResults = await Promise.all(allFilesPromise);
+    console.log(promiseResults);
   },
 };

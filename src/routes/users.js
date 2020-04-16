@@ -29,6 +29,6 @@ routes.get("/edit/:id", UserController.edit); //Cadastrar um usuário
 routes.get("/", UserController.list); //Mostrar a lista de usuários cadastrados
 routes.post("/", UserValidator.post, UserController.post); //Cadastrar um usuário
 routes.put("/", UserValidator.put, UserController.put); // Editar um usuário
-// routes.delete("/", UserController.delete); // Deletar um usuário
+routes.delete("/", UserController.delete); // Deletar um usuário
 
 module.exports = routes;

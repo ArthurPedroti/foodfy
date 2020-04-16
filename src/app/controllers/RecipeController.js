@@ -116,7 +116,7 @@ module.exports = {
     let results = await Recipe.create(req.body);
     const recipeId = results.rows[0].id;
     const filesPromise = req.files.map((file) =>
-      File.create(file)
+      File.create(file, null, recipeId)
         .then((response) => {
           file_id = response.rows[0].id;
           recipe_id = recipeId;
