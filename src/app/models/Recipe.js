@@ -96,7 +96,11 @@ module.exports = {
   },
   async paginate(params) {
     const { filter, limit, offset, order_by, user_id: id } = params;
-    let user = await User.findOne({ where: { id } });
+    let user = "";
+    if (id) {
+      user = await User.findOne({ where: { id } });
+    }
+
     let adminQuery = ``;
 
     if (user.is_admin == false) {
