@@ -45,11 +45,14 @@ module.exports = {
   },
   async deleteByRecipe(id) {
     try {
-      const result = await db.query(`SELECT * FROM files WHERE id = $1`, [id]);
-      const files = result.rows[0];
+      const result = await db.query(
+        `SELECT * FROM files WHERE recipe_id = $1`,
+        [id]
+      );
+      const files = result.rows;
 
       const filesPromise = files.map(
-        async (file) => await File.delete(file.recipe_id)
+        async (file) => await this.delete(file.id)
       );
       let results = await Promise.all(filesPromise);
     } catch (err) {

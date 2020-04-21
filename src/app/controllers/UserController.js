@@ -16,9 +16,7 @@ module.exports = {
     res.render("admin/user/edit", { user });
   },
   async post(req, res) {
-    const userId = await User.create(req.body);
-
-    req.session.userId = userId;
+    await User.create(req.body);
 
     return res.redirect("/admin/users");
   },
@@ -47,7 +45,7 @@ module.exports = {
   },
   async delete(req, res) {
     try {
-      // User.delete(req.body.id);
+      User.delete(req.body.id);
       return res.render("admin/user/index", {
         success: "Conta deletada com sucesso",
       });

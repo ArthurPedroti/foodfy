@@ -101,13 +101,13 @@ module.exports = {
     ]);
     const recipes = results.rows;
 
-    //remove user
-    await db.query("DELETE FROM users WHERE id = $1", [id]);
-
     //remove all images
     const allFilesPromise = recipes.map((recipe) =>
       File.deleteByRecipe(recipe.id)
     );
     let promiseResults = await Promise.all(allFilesPromise);
+
+    //remove user
+    await db.query("DELETE FROM users WHERE id = $1", [id]);
   },
 };
