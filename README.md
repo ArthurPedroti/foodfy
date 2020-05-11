@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Gym Manager" src="./public/assets/readme-logo.PNG"  width="400px" style="border-radius:16px;"/>
+    <img alt="Gym Manager" src="./public/assets/foodfy.gif"  width="400px" style="border-radius:16px;"/>
 </h1>
 
 <h3 align="center" >
@@ -40,15 +40,10 @@
 </p>
 
 <p align="center">
-<a href="#rocket-environment">Environment</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#computer-languages">Languages</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#books-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
-
-## :rocket: Environment
-
-- **https://atp-foodfy.herokuapp.com/**
 
 ## :computer: Languages
 
