@@ -1,5 +1,5 @@
 <h1 align="center" >
-  GoMarketplace
+  Foodfy
 </h1>
 <h1 align="center">
     <img alt="Foodfy" src="./public/assets/foodfy.gif"  width="400px" style="border-radius:16px;"/>
